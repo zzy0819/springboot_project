@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import java.util.Collection;
+import java.util.List;
 
 @Controller
 @RequestMapping("/employee")
@@ -20,9 +21,10 @@ public class EmployeeController {
     EmployeeDao employeeDao;
     @RequestMapping("/getAll")
     public String getAll(Model model){
-//        Collection<Employee> employees = employeeService.getAllEmployee();
-        Collection<Employee> employees= employeeDao.getAll();
-        model.addAttribute("emp", employees);
+        List<Employee> employees = employeeService.getAllEmployee();
+        System.out.println(employees);
+        model.addAttribute("msg", employees);
+//        model.addAttribute("emp", employees);
         return "emp/list";
     }
 }

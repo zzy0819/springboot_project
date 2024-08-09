@@ -1,6 +1,7 @@
 package com.example.zzy.service;
 
 import com.example.zzy.dao.EmployeeDao;
+import com.example.zzy.dao.EmployeeMapper;
 import com.example.zzy.pojo.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +14,13 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService{
 
     @Autowired
-    private EmployeeDao employeeDao;
+    private EmployeeMapper employeeMapper;
+
     @Autowired
     private Employee employee;
 
     @Override
-    public Collection<Employee> getAllEmployee() {
-        return employeeDao.getAll();
+    public List<Employee> getAllEmployee() {
+        return employeeMapper.getAll();
     }
 }
