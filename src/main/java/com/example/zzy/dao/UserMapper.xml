@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.zzy.dao.UserMapper">
+
+    <resultMap id="UserMap" type="User">
+        <result column="id" property="id" />
+    </resultMap>
+
+    <select id="selectUser" resultMap="UserMap">
+        select * from mabatis.user
+    </select>
+
+    <select id="getUserById" parameterType="int" resultMap="UserMap">
+        select  * from mabatis.user where id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="User">
+        insert into mabatis.user(id,username,addr,gender,password) values (#{id}, #{username}, #{addr},#{gender},#{password});
+    </insert>
+
+    <update id="upDateUser" parameterType="string" >
+        update user set gender = "女" where username = #{username}
+    </update>
+
+    <delete id="deleteUser" parameterType="string">
+        delete from user where username = #{username} and gender = #{gender}
+    </delete>
+
+    <select id="getUserByLimit" parameterType="map" resultType="User">
+        select * from user limit #{startIndex},#{pageSize}
+    </select>
+</mapper>
