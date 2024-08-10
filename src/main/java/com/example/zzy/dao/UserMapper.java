@@ -1,22 +1,13 @@
 package com.example.zzy.dao;
 
 import com.example.zzy.pojo.User;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
+@Mapper
 public interface UserMapper {
 
-
-    List<User> selectUser();
-
-    User getUserById(int id);
-
-    int insertUser(User user);
-
-    int upDateUser(String usernmae);
-
-    int deleteUser(String username, String gender);
-
-    List<User> getUserByLimit(Map<String, Integer> map);
+    int checkLogin(String username, String password);
 }

@@ -3,6 +3,7 @@ package com.example.zzy;
 import com.example.zzy.dao.EmployeeMapper;
 import com.example.zzy.pojo.Employee;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;

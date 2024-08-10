@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload = function (){
+        document.getElementById("helloBtn").onclick = function (){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                console.log(xhr.onreadystatechange)
+            }
+            xhr.open("GET", "http://localhost:8080/employee/getAll?username=12312&password=12312", true)
+            xhr.send()
+        }
+    }
+</script>
+<input type="button" value="hello ajax" id="helloBtn">
+<div id="mydiv">
+</div>
+
+</body>
+</html>

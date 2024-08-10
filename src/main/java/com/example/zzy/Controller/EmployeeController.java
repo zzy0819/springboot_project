@@ -1,5 +1,4 @@
 package com.example.zzy.Controller;
-
 import com.example.zzy.dao.EmployeeDao;
 import com.example.zzy.pojo.Employee;
 import com.example.zzy.service.EmployeeService;
@@ -7,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
@@ -24,7 +23,6 @@ public class EmployeeController {
         List<Employee> employees = employeeService.getAllEmployee();
         System.out.println(employees);
         model.addAttribute("msg", employees);
-//        model.addAttribute("emp", employees);
         return "emp/list";
     }
 }

@@ -17,16 +17,19 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
     @Resource
     private userService userservice;
+    @Autowired
+    private User user;
+
     @RequestMapping("/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model, HttpSession session){
-        if (!StrUtil.isEmpty(username) && "1234".equals(password)){
             session.setAttribute("loginUser", username);
-            return "redirect:/main.html";
-        }
-        else {
-            model.addAttribute("msg", "input error");
-            return "index";
-        }
+
+            if (userservice.checkLogin(username, password)){
+                return "redirect:/main.html";
+            }else{
+                model.addAttribute("msg", "input error");
+                return "index";
+            }
     }
 
 }
