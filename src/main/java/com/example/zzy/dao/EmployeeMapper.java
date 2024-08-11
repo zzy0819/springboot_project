@@ -9,5 +9,5 @@ import java.util.List;
 
 @Mapper
 public interface EmployeeMapper {
-    public List<Employee> getAll();
+    public List<Employee> getEmployee();
 }

@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<script>
+<script type="text/javascript">
     window.onload = function (){
-        document.getElementById("helloBtn").onclick = function (){
+        document.getElementById("mybtn").onclick = function (){
             var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function (){
-                console.log(xhr.onreadystatechange)
+            xhr.onreadystatechange = function(){
+
             }
-            xhr.open("GET", "http://localhost:8080/employee/getAll?username=12312&password=12312", true)
-            xhr.send()
+           var username = document.getElementById("username");
+           var password = document.getElementById("username");
+            document.getElementById("password");
+            xhr.open("POST", "http://localhost:8080/employee/getAll", true)
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+            xhr.send("username="+username+"password="+password);
         }
     }
 </script>
-<input type="button" value="hello ajax" id="helloBtn">
-<div id="mydiv">
+<div>
+    <input type="text" id="username">
+    <input type="text" id="password">
+    <button id="mybtn"></button>
 </div>
-
 </body>
 </html>

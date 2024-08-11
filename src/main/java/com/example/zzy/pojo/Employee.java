@@ -13,14 +13,16 @@ import java.util.Date;
 public class Employee {
     private Integer id;
     private String lastName;
+    private Integer departmentId;
     private String email;
     private Integer gender;
     private Department department;
     private Date birth;
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department) {
+    public Employee(Integer id, String lastName, Integer departmentId, String email, Integer gender, Department department) {
         this.id = id;
         this.lastName = lastName;
+        this.departmentId = departmentId;
         this.email = email;
         this.gender = gender;
         this.department = department;

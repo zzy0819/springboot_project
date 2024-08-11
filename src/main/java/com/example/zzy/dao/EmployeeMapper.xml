@@ -4,10 +4,27 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.zzy.dao.EmployeeMapper">
-
-
-    <select id="getAll" resultType="com.example.zzy.pojo.Employee">
-        select * from manger.employee
+    <select id="getEmployee" resultMap="EmployeeDepartment">
+        select *
+        from employee
     </select>
+    <resultMap id="EmployeeDepartment" type="com.example.zzy.pojo.Employee">
+        <result property="id" column="id"/>
+        <result property="lastName" column="lastName"/>
+        <result property="departmentId" column="departmentId"/>
+        <result property="email" column="email"/>
+        <result property="gender" column="gender"/>
+        <result property="birth" column="birth"/>
+        <association property="department" column="departmentId" javaType="com.example.zzy.pojo.Department" select="getDepartment"/>
+    </resultMap>
+
+    <select id="getDepartment" resultType="com.example.zzy.pojo.Department">
+        select *
+        from department
+        where id = #{departmentId}
+    </select>
+<!--    <select id="getAll" resultType="com.example.zzy.pojo.Employee">-->
+<!--        select * from manger.employee-->
+<!--    </select>-->
 
 </mapper>

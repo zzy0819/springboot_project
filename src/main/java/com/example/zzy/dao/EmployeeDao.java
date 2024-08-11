@@ -18,11 +18,11 @@ public class EmployeeDao {
     private DepartmentDao departmentDao;
     static {
        employees = new HashMap<>();
-       employees.put(101, new Employee(101, "AA","2423124@qq.com",0,new Department(101, "国防部")));
-       employees.put(102, new Employee(102, "BB","2423224@qq.com",1,new Department(101, "国防部")));
-       employees.put(103, new Employee(103, "CC","2421124@qq.com",0,new Department(101, "国防部")));
-       employees.put(104, new Employee(104, "DD","2427124@qq.com",1,new Department(101, "国防部")));
-       employees.put(105, new Employee(105, "EE","2420124@qq.com",0,new Department(101, "国防部")));
+//       employees.put(101, new Employee(101, "AA","2423124@qq.com",0,new Department(101, "国防部")));
+//       employees.put(102, new Employee(102, "BB","2423224@qq.com",1,new Department(101, "国防部")));
+//       employees.put(103, new Employee(103, "CC","2421124@qq.com",0,new Department(101, "国防部")));
+//       employees.put(104, new Employee(104, "DD","2427124@qq.com",1,new Department(101, "国防部")));
+//       employees.put(105, new Employee(105, "EE","2420124@qq.com",0,new Department(101, "国防部")));
     }
 
     public static Integer initId = 1006;

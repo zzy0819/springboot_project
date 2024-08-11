@@ -21,8 +21,8 @@ public class EmployeeController {
     @RequestMapping("/getAll")
     public String getAll(Model model){
         List<Employee> employees = employeeService.getAllEmployee();
-        System.out.println(employees);
         model.addAttribute("msg", employees);
+        System.out.println(employees);
         return "emp/list";
     }
 }
